@@ -125,16 +125,21 @@
             <Border Background="#FFF3D2D2"
                     BorderBrush="Black"
                     Margin="10"
-                    x:Name="BordeImagen">
+                    x:Name="BordeImagen"
+                    Width="{Binding ElementName=anchoSlider, Path=Value}"
+                    Height="{Binding ElementName=altoSlider, Path=Value}"
+                    BorderThickness="{Binding ElementName=bordeCheckBox, Path=IsChecked, Converter={StaticResource conversorBorde}}">
                 <Grid>
                     <Image Stretch="Fill" 
                            Width="{Binding ElementName=anchoSlider, Path=Value, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                            Height="{Binding ElementName=altoSlider, Path=Value, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                            Source="{Binding ElementName=imagenTextBox, Path=Text, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <TextBlock Style="{StaticResource textoMeme}"
-                               VerticalAlignment="Top"></TextBlock>
+                               VerticalAlignment="Top"
+                               Text="{Binding ElementName=superiorTextBox, Path=Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
                     <TextBlock Style="{StaticResource textoMeme}"
-                               VerticalAlignment="Bottom"></TextBlock>
+                               VerticalAlignment="Bottom"
+                               Text="{Binding ElementName=inferiorTextBox, Path=Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
                 </Grid>
             </Border>
         </StackPanel>

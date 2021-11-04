@@ -12,9 +12,15 @@ namespace MemeMaker
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            bool isChecked = (bool)value;
+            /*bool isChecked = (bool)value;
 
             if (isChecked) return 3;
+            else return 0;*/
+
+            if ((bool)value)
+            {
+                return 3;
+            }
             else return 0;
         }
 
